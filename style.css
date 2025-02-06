@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@font-face {
+    font-family: Gang Of Three;
+    src: url(./fonts/GangOfThree.ttf);
+}
+
+*{
+    font-family: "Lato", serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+main{
+    position: fixed;
+    right: 2rem;
+    width: 25%;
+    max-height: 80%;
+    animation: onLoadNav ease-in 2400ms;
+}
+
+#redDot{
+    background: #bd0029;
+    border-radius: 100%;
+    height: 33.75vw;
+    aspect-ratio: 1/1;
+    animation: onLoad ease-in 2000ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gang Of Three';
+    color: transparent;
+}
+
+nav{
+    position: fixed;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    animation: onLoadNav ease-in 2400ms;
+    color: #000000B3;
+}
+
+a{
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000000B3;
+    text-decoration: none;
+    animation: onLoadNav ease-in 2400ms;
+}
+
+a:hover{
+    font-size: 2.5rem;
+    color: black;
+}
+
+@keyframes onLoad {
+    0% {
+        height: 190vw;
+        font-size: 16rem;
+        color: white;
+    }
+    70%{
+        font-size: 16rem;
+        height: 190vw;
+        color: white;
+    }
+    100% {
+        height: 33.75vw;
+        font-size: 0;
+        color: transparent;
+    }
+}
+
+@keyframes onLoadNav {
+    0% {
+        color: transparent
+    }
+    70%{
+        color: transparent
+    }
+    100% {
+        color: #000000B3;
+    }
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #bd0029;
+  }
+  
+  ::selection {
+    color: white;
+    background: #bd0029;
+  }
