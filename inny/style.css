@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@font-face {
+    font-family: Gang Of Three;
+    src: url(./fonts/GangOfThree.ttf);
+}
+
+*{
+    font-family: "Lato", serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+main{
+    position: fixed;
+    right: 2rem;
+    width: 25%;
+    max-height: 80%;
+    display: block;
+    overflow-y: scroll;
+}
+
+#redDot{
+    background: #bd0029;
+    border-radius: 100%;
+    height: 33.75vw;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gang Of Three';
+    color: transparent;
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+}
+
+
+
+nav{
+    top: 48%;
+    position: fixed;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    color: #000000B3;
+    transition: top 2s ease;
+}
+
+a{
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 2.5rem;
+    color: black;
+}
+
+.selected{
+    font-size: 2.3rem;
+    color: black;
+}
+
+.onLoad {
+    animation: onLoad 2s forwards ease-in;
+}
+
+@keyframes onLoad {
+    0% {
+        height: 190vw;
+        font-size: 16rem;
+        color: white;
+    }
+    70%{
+        font-size: 16rem;
+        height: 190vw;
+        color: white;
+    }
+    100% {
+        height: 33.75vw;
+        font-size: 0;
+        color: transparent;
+    }
+}
+
+.reverseAnimation {
+    animation: reverseOnLoad 2s forwards ease-out;
+}
+
+@keyframes reverseOnLoad {
+    0% {
+        height: 33.75vw;
+        font-size: 0;
+        color: transparent;
+    }
+    30% {
+        height: 190vw;
+        font-size: 0;
+        color: transparent;
+    }
+    100% {
+        height: 190vw;
+        font-size: 0;
+        color: transparent;
+    }
+}
+
+.transitionIn{
+    animation: transitionIn ease-in 2400ms forwards;
+}
+
+@keyframes transitionIn {
+    0% {
+        color: transparent
+    }
+    70%{
+        color: transparent
+    }
+    100% {
+        color: #000000B3;
+    }
+}
+
+.transitionInSG{
+    animation: transitionInSG ease-in 2400ms;
+}
+
+@keyframes transitionInSG {
+    0% {
+        color: transparent
+    }
+    70%{
+        color: transparent
+    }
+    100% {
+        color: black;
+    }
+}
+
+.transitionInMain{
+    animation: transitionInMain ease-in 2400ms;
+}
+
+@keyframes transitionInMain {
+    0% {
+        color: transparent
+    }
+    70%{
+        color: transparent
+    }
+    100% {
+        color: black;
+    }
+}
+
+.transitionOut{
+    animation: transitionOut ease-out 300ms forwards;
+}
+
+@keyframes transitionOut {
+    0% {
+        color: #000000B3;
+    }
+    30%{
+        color: transparent;
+    }
+    100% {
+        color: transparent;
+    }
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #bd0029;
+}
+  
+  ::selection {
+    color: white;
+    background: #bd0029;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #bd0029;
+    border-radius: 1rem;
+}
+
+#map {
+    height: 700px;
+    width: 100%;
+}

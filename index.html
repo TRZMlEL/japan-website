@@ -5,34 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Japonia</title>
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-    <nav class="transitionIn">
-        <a onclick="index()" class="selected transitionInSG">Strona główna</a>
-        <a onclick="transition('gospodarka')" id="gospodarka">Gospodarka</a>
-        <a onclick="transition('turystyka')" id="turystyka">Turystyka</a>
-        <a onclick="transition('kuchnia')" id="kuchnia">Kuchnia</a>
-        <a onclick="transition('jezyk')" id="jezyk">Język</a>
+    <nav>
+        <a href="index.html" class="currentPage">Strona główna</a>
+        <a href="economy.html">Gospodarka</a>
+        <a href="tourism.html">Turystyka</a>
+        <a href="cuisine.html">Kuchnia</a>
+        <a href="language.html">Język</a>
+        <a href="quiz.html">Quiz</a>
     </nav>
-    <div id="redDot" class="onLoad">Japonia</div>
-    <main class="transitionInMain">
-       
+    <main tabindex="-1">
+        <div id="scroll">
+            <header>
+                <h1 id="japonia">Japonia</h1>
+            </header>
+            <section id="flag">
+                <div>
+                    <div>                    
+                        <div id="redDot"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="about">
+                <h2>O kraju</h2>
+                <p>Japonia to kraj wyspiarski w Azji Wschodniej, położony na archipelagu japońskim. Graniczy z Rosją, Koreą Północną, Koreą Południową, Chinami i Tajwanem. Japonia to kraj o bogatej historii, kulturze i tradycjach. W Japonii znajduje się wiele zabytków, które przyciągają turystów z całego świata. Japonia to również kraj nowoczesny, który jest liderem w dziedzinie technologii i innowacji. Japończycy są znani z tego, że są pracowici, sumienni i dbają o porządek. W Japonii panuje wysoki poziom bezpieczeństwa, a ludzie są bardzo uprzejmi i pomocni.</p>
+            </section>
+            <section id="info">
+                <h2>Informacje</h2>
+                <table>
+                    <tr>
+                      <th>Powierzchnia</th>
+                      <th>377 914 km²</th>
+                    </tr>
+                    <tr>
+                      <td>Liczba ludności</td>
+                      <td>124 mln</td>
+                    </tr>
+                    <tr>
+                      <td>Waluta</td>
+                      <td>Jen japoński (JPY)</td>
+                    </tr>
+                    <tr>
+                      <td>Język urzędowy</td>
+                      <td>Japoński</td>
+                    </tr>
+                    <tr>
+                      <td>Stolica</td>
+                      <td>Tokio</td>
+                    </tr>
+                  </table>
+            </section>
+            <section id="trivia">
+                <h2>Ciekawostki</h2>
+                <ul>
+                    <li>
+                        Górzysty krajobraz: Około 70% powierzchni Japonii to góry, co jest wynikiem aktywności tektonicznej. Najwyższym szczytem jest wciąż aktywny wulkan Fuji. 
+                    </li>
+                    <li>
+                        Ceremonia herbaciana: Tradycyjna ceremonia picia herbaty, znana jako "chanoyu", stała się popularna w XIV wieku i była sposobem spędzania wolnego czasu przez wyższe warstwy społeczne. 
+                    </li>
+                        Hanami: Japończycy obchodzą święto kwitnącej wiśni, podczas którego podziwiają kwitnące drzewa sakura. Jest to czas spotkań z rodziną i przyjaciółmi oraz organizowania pikników pod kwitnącymi drzewami. 
+                    </li>
+                    <li>
+                        Onsen: Ze względu na liczne aktywne wulkany, Japonia posiada wiele gorących źródeł, zwanych onsenami. Kąpiele w onsenach są ważnym elementem japońskiej kultury i relaksu. 
+                    </li>
+                    <li>
+                        Automaty vendingowe: Japonia słynie z ogromnej liczby automatów vendingowych, które można znaleźć dosłownie na każdym kroku, nawet w najmniej spodziewanych miejscach. 
+                    </li>
+                    <li>
+                        Język japoński: Język japoński nie posiada wulgaryzmów w takim znaczeniu, jak w wielu innych językach. Obraza kogoś może polegać na nieokazaniu należytego szacunku poprzez zastosowanie uproszczonej formy gramatycznej. 
+                    </li>
+                    <li>
+                        Kapsułowe hotele: W Japonii popularne są kapsułowe hotele, które oferują minimalną przestrzeń do spania w postaci niewielkich kapsuł. Są one ekonomiczną opcją noclegu w dużych miastach. 
+                    </li>
+                    <li>
+                        Szybkie pociągi Shinkansen: Japonia jest znana z sieci szybkich pociągów Shinkansen, które osiągają prędkości do 320 km/h, zapewniając szybki i punktualny transport między dużymi miastami. 
+                    </li>
+                    <li>
+                        Brak koszy na śmieci: W Japonii brakuje publicznych koszy na śmieci, co wynika z kultury zabierania odpadów ze sobą do domu. Mimo to, kraj ten jest niezwykle czysty. 
+                    </li>
+                    <li>
+                        Maneki-neko: Popularnym symbolem w Japonii jest figurka kota z uniesioną łapą, znana jako maneki-neko, która ma przynosić szczęście i pomyślność. 
+                    </li>
+                </ul>
+            </section>
+            <footer>
+                <p>Autor: <a href="https://www.trzmiel.art/">Mateusz Trzmiel</a></p>
+                <button onclick="scrollToTop()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+                    </svg>
+                </button>
+            </footer>
+        </div>
     </main>
-
-    <script id="templateStronaGlowna" type="text/template">
-        <h2>Kraj kwitnącej wiśni</h2>
-        Japonia to wyspiarskie państwo w Azji Wschodniej, położone na archipelagu składającym się z czterech głównych wysp: Honsiu, Hokkaido, Kiusiu i Sikoku, oraz tysięcy mniejszych wysepek. Kraj ten słynie z unikalnego połączenia tradycji i nowoczesności – obok futurystycznych wieżowców Tokio znajdują się starożytne świątynie i malownicze ogrody.
-        <br><br>Japońska kultura jest bogata i różnorodna, od klasycznego teatru kabuki i ceremonii parzenia herbaty po popularne na całym świecie anime i mangę. To także kraj pełen kulinarnych doznań – sushi, ramen, tempura i matcha to tylko niektóre ze specjałów japońskiej kuchni.
-        <br><br>Japonia przyciąga turystów niezwykłymi krajobrazami, takimi jak majestatyczna góra Fudżi, gorące źródła onsen oraz malownicze pola ryżowe. To także miejsce o fascynującej historii i bogatym dziedzictwie, które można odkrywać w zamkach samurajskich i świątyniach buddyjskich.
-        <br><br>Kraj ten słynie również z innowacyjności i nowoczesnych technologii – to właśnie stąd pochodzą globalne marki, takie jak Sony, Toyota i Nintendo. Japonia to miejsce, które łączy szacunek dla tradycji z dynamicznym rozwojem, czyniąc je jednym z najbardziej niezwykłych państw na świecie.
-    </script>
-    <script id="templateTurystyka" type="text/template">
-        Hej tu turystyka
-        <div id="map"></div>
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
