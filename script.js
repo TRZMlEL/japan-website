@@ -10,10 +10,19 @@ japonia = document.querySelector('#japonia');
 
 if (window.location.pathname === "/index.html" || window.location.pathname === "/" || window.location.pathname === "/japan-website/index.html" || window.location.pathname === "/japan-website/") {
   main.style.overflowY = 'hidden';
-  main.style.marginLeft = 'calc(15% + 0.3rem)';
+  if (window.innerWidth > 1000) {
+    main.style.marginLeft = 'calc(15% + 0.3rem)';
+  }else{
+    main.style.paddingLeft = '0.3rem';
+  }
+  
   japonia.addEventListener('animationend', () => {
     japonia.style.position = 'relative';
     main.style.overflowY = 'scroll';
-    main.style.marginLeft = '15%';
+    if (window.innerWidth > 1000) {
+      main.style.marginLeft = '15%';
+    }else{
+      main.style.paddingLeft = '0';
+    }
   });
 }
