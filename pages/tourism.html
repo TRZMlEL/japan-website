@@ -20,7 +20,51 @@
             <header>
                 <h1>Turystyka</h1>
             </header>
-            <section>
+            <section id="map">
+                <h2>Mapa Japonii</h2>
+                <p>Kliknij na jedno z trzech turystycznych miejsc, aby dowiedzieć się więcej:</p>
+                <div>
+                    <img src="../assets/images/japan-map.png" alt="Mapa Japonii" usemap="#japanmap" draggable="false">
+
+                    <map id="japanmap" name="japanmap">
+                        <area shape="circle" alt="Tokyo" title="Tokyo" coords="272,353,12" href="#tokyo"/>
+                        <area shape="circle" alt="Kyoto" title="Kyoto" coords="170,379,8" href="#kyoto"/>
+                        <area shape="circle" alt="Osaka" title="Osaka" coords="162,389,8" href="#osaka"/>
+                    </map>
+                </div>
+            </section>
+            <section id="tokyo">
+                <h2>Tokyo</h2>
+                <p>Tokyo to stolica Japonii i jedno z największych miast na świecie. Znajdziesz tu wiele atrakcji, takich jak:</p>
+                <ul>
+                    <li>Pałac Cesarski</li>
+                    <li>Wieża Tokio</li>
+                    <li>Shibuya Crossing</li>
+                    <li>Asakusa</li>
+                </ul>
+                <img src="../assets/images/tokyo.jpg" alt="Tokyo">
+            </section>
+            <section id="kyoto">
+                <h2>Kyoto</h2>
+                <p>Kyoto to miasto znane z zachowanych tradycji i zabytków. Warto odwiedzić:</p>
+                <ul>
+                    <li>Świątynię Kinkaku-ji</li>
+                    <li>Świątynię Fushimi Inari-taisha</li>
+                    <li>Arashiyama Bamboo Grove</li>
+                    <li>Gejsze w dzielnicy Gion</li>
+                </ul>
+                <img src="../assets/images/kyoto.jpg" alt="Kyoto">
+            </section>
+            <section id="osaka">
+                <h2>Osaka</h2>
+                <p>Osaka to miasto znane z kulinarnych przysmaków i żywego życia nocnego. Warto odwiedzić:</p>
+                <ul>
+                    <li>Zamek Osaka</li>
+                    <li>Osaka Aquarium Kaiyukan</li>
+                    <li>Umeda Sky Building</li>
+                    <li>Dzielnicę Dotonbori</li>
+                </ul>
+                <img src="../assets/images/osaka.jpg" alt="Osaka">
             </section>
             <footer>
                 <p>Autor: <a href="https://www.trzmiel.art/">Mateusz Trzmiel</a></p>
