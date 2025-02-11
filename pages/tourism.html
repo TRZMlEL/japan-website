@@ -22,7 +22,8 @@
             </header>
             <section id="map">
                 <h2>Mapa Japonii</h2>
-                <p>Kliknij na jedno z trzech turystycznych miejsc, aby dowiedzieć się więcej:</p>
+                <p>Kliknij na jedno z trzech turystycznych miejsc aby dowiedzieć się więcej:</p>
+                <i>(Naciśnij [Tab], aby podświetlić)</i>
                 <div>
                     <img src="../assets/images/japan-map.png" alt="Mapa Japonii" usemap="#japanmap" draggable="false">
 
@@ -42,7 +43,13 @@
                     <li>Shibuya Crossing</li>
                     <li>Asakusa</li>
                 </ul>
-                <img src="../assets/images/tokyo.jpg" alt="Tokyo">
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="../assets/images/tourism/Tokyo/Tokyo1.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Tokyo/Tokyo2.webp" alt="Zdjęcie 2" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Tokyo/Tokyo3.webp" alt="Zdjęcie 3" onclick="openLightbox(this)">
+                    </div>
+                </div>
             </section>
             <section id="kyoto">
                 <h2>Kyoto</h2>
@@ -53,7 +60,16 @@
                     <li>Arashiyama Bamboo Grove</li>
                     <li>Gejsze w dzielnicy Gion</li>
                 </ul>
-                <img src="../assets/images/kyoto.jpg" alt="Kyoto">
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="../assets/images/tourism/Kyoto/Kyoto1.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Kyoto/Kyoto2.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Kyoto/Kyoto3.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Kyoto/Kyoto4.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Kyoto/Kyoto5.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Kyoto/Kyoto6.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                    </div>
+                </div>
             </section>
             <section id="osaka">
                 <h2>Osaka</h2>
@@ -64,7 +80,15 @@
                     <li>Umeda Sky Building</li>
                     <li>Dzielnicę Dotonbori</li>
                 </ul>
-                <img src="../assets/images/osaka.jpg" alt="Osaka">
+                <div class="gallery-container">
+                    <div class="gallery">
+                        <img src="../assets/images/tourism/Osaka/Osaka1.webp" alt="Zdjęcie 1" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Osaka/Osaka2.webp" alt="Zdjęcie 2" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Osaka/Osaka3.webp" alt="Zdjęcie 3" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Osaka/Osaka4.webp" alt="Zdjęcie 3" onclick="openLightbox(this)">
+                        <img src="../assets/images/tourism/Osaka/Osaka5.webp" alt="Zdjęcie 3" onclick="openLightbox(this)">
+                    </div>
+                </div>
             </section>
             <footer>
                 <p>Autor: <a href="https://www.trzmiel.art/">Mateusz Trzmiel</a></p>
@@ -76,6 +100,9 @@
             </footer>
         </div>
     </main>
+    <div class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img">
+    </div>
     <script src="../js/script.js"></script>
 </body>
 </html>

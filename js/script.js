@@ -37,3 +37,46 @@ document.querySelectorAll("area").forEach(area => {
       }
   });
 });
+
+// Funkcja do przeciągania galerii
+const galleryContainer = document.querySelector(".gallery-container");
+let isDown = false;
+let startX, scrollLeft;
+
+galleryContainer.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - galleryContainer.offsetLeft;
+    scrollLeft = galleryContainer.scrollLeft;
+    galleryContainer.style.cursor = "grabbing";
+});
+
+galleryContainer.addEventListener("mouseleave", () => {
+    isDown = false;
+    galleryContainer.style.cursor = "grab";
+});
+
+galleryContainer.addEventListener("mouseup", () => {
+    isDown = false;
+    galleryContainer.style.cursor = "grab";
+});
+
+galleryContainer.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - galleryContainer.offsetLeft;
+    const walk = (x - startX) * 2; 
+    galleryContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Funkcja do otwierania powiększonego zdjęcia
+function openLightbox(img) {
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
+}
+
+// Funkcja do zamykania powiększonego zdjęcia
+function closeLightbox() {
+    document.querySelector(".lightbox").style.display = "none";
+}
