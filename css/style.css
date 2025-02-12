@@ -417,6 +417,48 @@ area{
     border: var(--light) 0.3rem solid;
 }
 
+#quiz{
+    height: 72.4vh;
+}
+
+#quiz p a{
+    color: var(--red);
+    text-decoration: wavy underline;
+}
+
+#quiz p a:hover{
+    color: var(--redActive);
+}
+
+.question{
+    font-size: 2rem;
+}
+
+#result{
+    font-size: 1.4rem;
+}
+
+#quiz button{
+    background-color: var(--red);
+    padding: 1rem;
+    width: 13%;
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+    margin: 0.5rem;
+    color: var(--light);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#quiz button:hover{
+    transform: scale(1.05);
+}
+
+#quiz button:active{
+    background-color: var(--redActive);
+}
+
 @media (max-width: 1000px) {
     nav{
         width: auto;
