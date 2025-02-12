@@ -417,25 +417,18 @@ area{
     border: var(--light) 0.3rem solid;
 }
 
-#quiz{
-    height: 72.4vh;
-}
-
-#quiz p a{
+#result p a{
     color: var(--red);
     text-decoration: wavy underline;
 }
 
-#quiz p a:hover{
+#result p a:hover{
     color: var(--redActive);
-}
-
-.question{
-    font-size: 2rem;
 }
 
 #result{
     font-size: 1.4rem;
+    height: 75.9vh;
 }
 
 #quiz button{
@@ -449,6 +442,7 @@ area{
     color: var(--light);
     font-weight: 700;
     cursor: pointer;
+    margin-bottom: 3rem;
 }
 
 #quiz button:hover{
@@ -457,6 +451,83 @@ area{
 
 #quiz button:active{
     background-color: var(--redActive);
+}
+
+form p{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+form label{
+    font-size: 1rem;
+    background-color: var(--light);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--dark);
+    cursor: pointer;
+    transition: 0.5s;
+    width: 50%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+form div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem
+}
+
+form div input{
+    width: calc(25% - 0.7rem);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+label:has(input[type="radio"]:checked) {
+    background: var(--red);
+    color: var(--light);
+}
+
+label:has(input[type="checkbox"]:checked) {
+    background: var(--red);
+    color: var(--light);
+}
+
+#result button:hover{
+    transform: scale(1.05);
+}
+
+#result button:active{
+    background-color: var(--redActive);
+}
+
+#result button{
+    background-color: var(--red);
+    padding: 1rem;
+    width: 25%;
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+    margin: 0.5rem;
+    color: var(--light);
+    font-weight: 700;
+    cursor: pointer;
 }
 
 @media (max-width: 1000px) {

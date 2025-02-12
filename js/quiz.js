@@ -1,90 +1,55 @@
-const quizData = [
-    { 
-        question: "Jak nazywa się stolica Japonii?", 
-        options: ["Kyoto", "Osaka", "Tokyo", "Hiroshima"], 
-        answer: "Tokyo" 
-    },
-    { 
-        question: "Które z tych dań jest tradycyjną potrawą japońską?", 
-        options: ["Sushi", "Tacos", "Pizza", "Bigos"], 
-        answer: "Sushi" 
-    },
-    { 
-        question: "Jak nazywa się japońska sztuka składania papieru?", 
-        options: ["Ikebana", "Origami", "Calligraphy", "Sumi-e"], 
-        answer: "Origami" 
+let storedName = "";
+let storedSurname = "";
+
+function submitQuiz(event) {
+    event.preventDefault();
+    const form = document.getElementById("quiz-form");
+    const formData = new FormData(form);
+    
+    storedName = formData.get("name");
+    storedSurname = formData.get("surname");
+
+    let score = 0;
+    if (formData.get("capital") === "Tokyo") score++;
+    if (formData.get("island") === "Honsiu") score++;
+    if (formData.getAll("food").includes("Sushi")) score++;
+    if (formData.getAll("food").includes("Ramen")) score++;
+    if (formData.getAll("food").includes("Onigiri")) score++;
+    if (formData.get("art") === "Origami") score++;
+    if (formData.get("culture") === "Samuraje") score++;
+    if (formData.get("writing") === "Kanji") score++;
+    if (formData.get("theater") === "Kabuki") score++;
+    if (formData.get("emperor") === "Naruhito") score++;
+    if (formData.get("holiday") === "Golden Week") score++;
+    if (formData.get("sport") === "Sumo") score++;
+    if (formData.get("flag") === "Czerwono-biała") score++;
+    if (formData.get("currency") === "Jen") score++;
+    if (formData.get("drink") === "Matcha") score++;
+
+    let percentage = (score / 15) * 100;
+    let finalMessage = "";
+    
+    if (percentage < 25) {
+        finalMessage = "❌ Oj, Japonia to dla Ciebie jeszcze wielka zagadka! 🏯 Ale nic straconego! Odwiedź naszą <a href='../index.html'>stronę</a> i odkryj fascynujący świat samurajów, sushi i sakury! 🌸";
+    } else if (percentage < 50) {
+        finalMessage = "🤔 Masz podstawową wiedzę, ale to dopiero początek! 📖 Zanurz się w kulturze Japonii i zostań prawdziwym ekspertem! 🇯🇵";
+    } else if (percentage < 75) {
+        finalMessage = "👍 Całkiem nieźle! 🎌 Znasz już sporo faktów o Japonii, ale zawsze można dowiedzieć się więcej. Trzymaj tak dalej!";
+    } else if (percentage < 100) {
+        finalMessage = "🎉 Wow! Jesteś prawdziwym znawcą Japonii! 🏆 Może czas zaplanować podróż i sprawdzić swoją wiedzę w praktyce? ✈️";
+    } else {
+        finalMessage = "🏅 Niesamowite! Rozwiązałeś quiz bezbłędnie! 🎖️ Twoja wiedza o Japonii jest imponująca! Może powinieneś zostać przewodnikiem po Japonii? 🇯🇵";
     }
-];
-
-let currentQuestion = 0;
-let score = 0;
-const questionElement = document.querySelector('.question');
-const optionsElement = document.querySelector('.options');
-const resultElement = document.getElementById('result');
-const scoreElement = document.getElementById('score');
-const finalMessageElement = document.getElementById('final-message');   
-const restartButton = document.getElementById('restart');
-
-function loadQuestion() {
-    const quizItem = quizData[currentQuestion];
-    questionElement.textContent = quizItem.question;
-    optionsElement.innerHTML = '';
-
-    quizItem.options.forEach(option => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.onclick = () => checkAnswer(option);
-        optionsElement.appendChild(button);
-    });
+    
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("result").style.display = "block";
+    document.getElementById("score").innerHTML = `Twój wynik: ${score} / 15<br>${finalMessage}`;
 }
 
-function checkAnswer(selected) {
-    const correctAnswer = quizData[currentQuestion].answer;
-    if (selected === correctAnswer) {
-        resultElement.textContent = "Dobrze!";
-        resultElement.style.color = "green";
-        score++;
-    } else {
-        resultElement.textContent = "Źle! Prawidłowa odpowiedź to: " + correctAnswer;
-        resultElement.style.color = "red";
-    }
-    currentQuestion++;
-    if (currentQuestion < quizData.length) {
-        setTimeout(() => {
-            resultElement.textContent = "";
-            loadQuestion();
-        }, 1000);
-    } else {
-        setTimeout(() => {
-            resultElement.textContent = "Koniec quizu!";
-            optionsElement.innerHTML = '';
-            scoreElement.textContent = "Twój wynik: " + score + " / " + quizData.length;
-            
-            let finalMessage = "";
-            if (score === 0) {
-                finalMessage = "❌ Oj, Japonia to dla Ciebie jeszcze wielka zagadka! 🏯 Ale nic straconego! Odwiedź naszą <a href='../index.html'>stronę</a> i odkryj fascynujący świat samurajów, sushi i sakury! 🌸";
-            } else if (score === 1) {
-                finalMessage = "🤔 Masz podstawową wiedzę, ale to dopiero początek! 📖 Zanurz się w kulturze Japonii i zostań prawdziwym ekspertem! 🇯🇵";
-            } else if (score === 2) {
-                finalMessage = "👍 Całkiem nieźle! 🎌 Znasz już sporo faktów o Japonii, ale zawsze można dowiedzieć się więcej. Trzymaj tak dalej!";
-            } else if (score === 3) {
-                finalMessage = "🎉 Wow! Jesteś prawdziwym znawcą Japonii! 🏆 Może czas zaplanować podróż i sprawdzić swoją wiedzę w praktyce? ✈️";
-            }
-            
-            finalMessageElement.innerHTML = finalMessage;
-            restartButton.style.display = "block";
-        }, 1000);
-    }
+function restartQuiz() {
+    document.getElementById("quiz").style.display = "block";
+    document.getElementById("result").style.display = "none";
+    document.getElementById("quiz-form").reset();
+    document.getElementById("name").value = storedName;
+    document.getElementById("surname").value = storedSurname;
 }
-
-restartButton.addEventListener('click', () => {
-    currentQuestion = 0;
-    score = 0;
-    scoreElement.textContent = "";
-    finalMessageElement.textContent = "";
-    restartButton.style.display = "none";
-    resultElement.textContent = "";
-    loadQuestion();
-});
-
-loadQuestion();

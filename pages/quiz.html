@@ -21,12 +21,87 @@
                 <h1>Quiz</h1>
             </header>
             <section id="quiz">
-                <p class="question">Ładowanie...</p>
-                <div class="options"></div>
-                <p id="result"></p>
+                <form id="quiz-form" onsubmit="submitQuiz(event)">
+                    <div>
+                        <input type="text" id="name" name="name" required placeholder="Imię">
+                        <input type="text" id="surname" name="surname" required placeholder="Nazwisko"><br>
+                    </div>
+                    
+                    <p>Jak nazywa się stolica Japonii?</p>
+                    <label><input type="radio" name="capital" value="Kyoto"> Kyoto</label>
+                    <label><input type="radio" name="capital" value="Osaka"> Osaka</label>
+                    <label><input type="radio" name="capital" value="Tokyo"> Tokyo</label>
+                    
+                    <p>Największa wyspa Japonii to?</p>
+                    <label><input type="radio" name="island" value="Hokkaido"> Hokkaido</label>
+                    <label><input type="radio" name="island" value="Honsiu"> Honsiu</label>
+                    <label><input type="radio" name="island" value="Shikoku"> Shikoku</label>
+                    
+                    <p>Wybierz tradycyjne dania japońskie:</p>
+                    <label><input type="checkbox" name="food" value="Sushi"> Sushi</label>
+                    <label><input type="checkbox" name="food" value="Ramen"> Ramen</label>
+                    <label><input type="checkbox" name="food" value="Onigiri"> Onigiri</label>
+                    <label><input type="checkbox" name="food" value="Bigos"> Bigos</label>
+                    
+                    <p>Japońska waluta to?</p>
+                    <label><input type="radio" name="currency" value="Won"> Won</label>
+                    <label><input type="radio" name="currency" value="Jen"> Jen</label>
+                    <label><input type="radio" name="currency" value="Yuan"> Yuan</label>
+                    
+                    <p>Tradycyjny japoński napój to?</p>
+                    <label><input type="radio" name="drink" value="Matcha"> Matcha</label>
+                    <label><input type="radio" name="drink" value="Cola"> Cola</label>
+                    <label><input type="radio" name="drink" value="Kawa"> Kawa</label>
+                    
+                    <p>Japońska sztuka składania papieru to?</p>
+                    <label><input type="radio" name="art" value="Origami"> Origami</label>
+                    <label><input type="radio" name="art" value="Ikebana"> Ikebana</label>
+                    <label><input type="radio" name="art" value="Manga"> Manga</label>
+                    
+                    <p>Jak nazywali się japońscy wojownicy?</p>
+                    <label><input type="radio" name="culture" value="Samuraje"> Samuraje</label>
+                    <label><input type="radio" name="culture" value="Ninja"> Ninja</label>
+                    <label><input type="radio" name="culture" value="Ronin"> Ronin</label>
+                    
+                    <p>Japoński system pisma to?</p>
+                    <label><input type="radio" name="writing" value="Kanji"> Kanji</label>
+                    <label><input type="radio" name="writing" value="Hiragana"> Hiragana</label>
+                    <label><input type="radio" name="writing" value="Katakana"> Katakana</label>
+                    
+                    <p>Tradycyjny teatr japoński to?</p>
+                    <label><input type="radio" name="theater" value="Kabuki"> Kabuki</label>
+                    <label><input type="radio" name="theater" value="Noh"> Noh</label>
+                    <label><input type="radio" name="theater" value="Bunraku"> Bunraku</label>
+                    
+                    <p>Obecny cesarz Japonii to?</p>
+                    <label><input type="radio" name="emperor" value="Naruhito"> Naruhito</label>
+                    <label><input type="radio" name="emperor" value="Akihito"> Akihito</label>
+                    <label><input type="radio" name="emperor" value="Hirohito"> Hirohito</label>
+                    
+                    <p>Największe japońskie święto to?</p>
+                    <label><input type="radio" name="holiday" value="Golden Week"> Golden Week</label>
+                    <label><input type="radio" name="holiday" value="Tanabata"> Tanabata</label>
+                    <label><input type="radio" name="holiday" value="Shogatsu"> Shogatsu</label>
+                    
+                    <p>Tradycyjny sport japoński to?</p>
+                    <label><input type="radio" name="sport" value="Sumo"> Sumo</label>
+                    <label><input type="radio" name="sport" value="Golf"> Golf</label>
+                    <label><input type="radio" name="sport" value="Judo"> Judo</label>
+                    
+                    <p>Flaga Japonii ma kolory?</p>
+                    <label><input type="radio" name="flag" value="Czerwono-biała"> Czerwono-biała</label>
+                    <label><input type="radio" name="flag" value="Niebiesko-biała"> Niebiesko-biała</label>
+                    <label><input type="radio" name="flag" value="Czerwono-zielona"> Czerwono-zielona</label>
+                    
+                    <br><br>
+                    <button type="submit">Zakończ quiz</button>
+                </form>
+            </section>
+            
+            <section id="result" style="display:none;">
+                <h2>Wynik</h2>
                 <p id="score"></p>
-                <p id="final-message"></p>
-                <button id="restart" style="display:none;">Rozwiąż ponownie</button>
+                <button onclick="restartQuiz()">Rozwiąż ponownie</button>
             </section>
             <footer>
                 <p>Autor: <a href="https://www.trzmiel.art/">Mateusz Trzmiel</a></p>

@@ -27,12 +27,15 @@
                   <li>Ramen</li>
                   <li>Tempura</li>
                   <li>Okonomiyaki</li>
+                  <li>Onigiri</li>
               </ul>
               <div class="gallery-container">
                   <div class="gallery">
-                      <img src="../assets/images/cuisine/dish1.webp" alt="Danie 1">
-                      <img src="../assets/images/cuisine/dish2.webp" alt="Danie 2">
-                      <img src="../assets/images/cuisine/dish3.webp" alt="Danie 3">
+                      <img src="../assets/images/cuisine/sushi.webp" alt="Sushi" title="Sushi" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/ramen.webp" alt="Ramen" title="Ramen" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/tempur.webp" alt="Tempura" title="Tempura" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/okonomiyaki.webp" alt="Okonomiyaki" title="Okonomiyaki" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/onigiri.webp" alt="Onigiri" title="Onigiri" onclick="openLightbox(this)">
                   </div>
               </div>
           </section>
@@ -47,9 +50,11 @@
               </ul>
               <div class="gallery-container">
                   <div class="gallery">
-                      <img src="../assets/images/cuisine/ingredient1.webp" alt="Składnik 1">
-                      <img src="../assets/images/cuisine/ingredient2.webp" alt="Składnik 2">
-                      <img src="../assets/images/cuisine/ingredient3.webp" alt="Składnik 3">
+                      <img src="../assets/images/cuisine/rice.webp" alt="Ryż" title="Ryż" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/soy-souce.webp" alt="Sos sojowy" title="Sos sojowy, zdjęcie autorstwa 국립국어원, licencja CC BY-SA 2.0 KR" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/miso.webp" alt="Miso" title="Miso" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/seaweed.webp" alt="Wodorosty" title="Wodorosty" onclick="openLightbox(this)">
+                      <img src="../assets/images/cuisine/tofu.webp" alt="Tofu" title="Tofu" onclick="openLightbox(this)">
                   </div>
               </div>
           </section>
@@ -63,6 +68,9 @@
             </footer>
         </div>
     </main>
+    <div class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img">
+    </div>
     <script src="../js/script.js"></script>
 </body>
 </html>
