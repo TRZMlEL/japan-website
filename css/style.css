@@ -243,10 +243,10 @@ i{
 
 @keyframes Japonia {
     0% {
-        transform: translate(33vw, 40vh);
+        transform: translate(30vw, 40vh);
     }
     50% {
-        transform: translate(33vw, 40vh);
+        transform: translate(30vw, 40vh);
     }
     100% {
         transform: translate(0%, 0%);
@@ -363,6 +363,7 @@ area{
     display: grid;
     place-items: center;
     margin-bottom: 1rem;
+    transform: translateY(-3rem);
 }
 
 .gallery-container {
@@ -429,6 +430,10 @@ area{
 #result{
     font-size: 1.4rem;
     height: 75.9vh;
+}
+
+#tokyo-gallery > *:first-child{
+    filter: grayscale(50%);
 }
 
 #quiz button{
@@ -499,6 +504,14 @@ input[type="checkbox"]{
     display: none;
 }
 
+select{
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+}
+
 label:has(input[type="radio"]:checked) {
     background: var(--red);
     color: var(--light);
@@ -528,6 +541,13 @@ label:has(input[type="checkbox"]:checked) {
     color: var(--light);
     font-weight: 700;
     cursor: pointer;
+}
+
+ol li{
+    list-style-type: decimal;
+    margin-left: 0;
+    padding: 0;
+    font-weight: 500;
 }
 
 @media (max-width: 1000px) {
