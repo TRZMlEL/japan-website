@@ -551,6 +551,10 @@ ol li{
 }
 
 @media (max-width: 1000px) {
+    *{
+        font-size: 1rem;
+    }
+
     nav{
         width: auto;
         height: auto;
@@ -562,26 +566,110 @@ ol li{
     }
 
     h1{
-        font-size: 3rem;
-        margin-top: 1rem;
+        font-size: 2rem;
+        margin: 0rem;
+        transform: translateY(1rem);
+    }
+
+    header{
+        display: grid;
+        place-items: center;
+        width: calc(100%-2rem);
+    }
+
+    nav{
+        padding: 1rem;
     }
 
     nav a{
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     nav a:hover{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .currentPage{
-        font-size: 1.4rem;
+        font-size: 0.9rem;
     }
 
     main{  
         margin-left: 0;
+        padding: 0;
     }
-  }
+
+    section{
+        padding: 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    #about{
+        flex-direction: column;
+    }
+
+    #about div{
+        width: calc(100% - 2rem);
+    }
+
+    #about #flag{
+        width: calc(100% - 2rem);
+        display: grid;
+        place-items: center;
+    }
+
+    @keyframes Japonia {
+        0% {
+            transform: translate(0%, 40vh);
+        }
+        50% {
+            transform: translate(0%, 40vh);
+        }
+        100% {
+            transform: translate(0%, 1rem);
+        }
+        
+    }
+
+    table{
+        width: 22rem;
+    }
+
+    form div input{
+        width: calc(100% - 2rem);
+    }
+
+    form label{
+        width: calc(100% - 2rem);
+    }
+    
+    form{
+        text-align: center;
+    }
+    
+    select{
+        width: calc(100% - 2rem);
+    }
+
+    #quiz button{
+        width: 50%;
+    }
+
+    #result button{
+        width: 50%;
+    }
+
+    form p{
+        font-size: 1.2rem;
+    }
+
+    h2{
+        font-size: 1.65rem;
+    }
+    .gallery img {
+        width: 150px;
+        height: 100px;
+    }
+}
 
 ::-moz-selection { /* Code for Firefox */
     color: var(--light);
