@@ -16,9 +16,10 @@ This is a website about Japan, created as a project for my web design classes at
 
 ### Mobile
 
-<p align="center">
-  <img src="assets/images/screenshots/mobile/loading.png" width="200px" />
-</p>
+| ![](assets/images/screenshots/mobile/loading.png) | ![](assets/images/screenshots/mobile/index.png) | ![](assets/images/screenshots/mobile/economy.png) |
+|:-------------------------------------------------:|:-----------------------------------------------:|:-------------------------------------------------:|
+| ![](assets/images/screenshots/mobile/tourism1.png) | ![](assets/images/screenshots/mobile/tourism2.png) | ![](assets/images/screenshots/mobile/cuisine.png) |
+| ![](assets/images/screenshots/mobile/language.png) | ![](assets/images/screenshots/mobile/quiz1.png) | ![](assets/images/screenshots/mobile/quiz2.png) |
 
 ## Tech Stack
 
