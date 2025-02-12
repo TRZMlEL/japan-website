@@ -355,6 +355,10 @@ li span{
     font-weight: 700;
 }
 
+area{
+    outline: white 0.1rem solid;
+}
+
 #map div{
     display: grid;
     place-items: center;
